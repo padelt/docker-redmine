@@ -91,5 +91,6 @@ fi
 
 # Normal startup process
 generate_secret
-launch_apache &
-tail -f /var/log/apache2/*.log /usr/local/redmine/log/production.log
+#launch_apache &
+tail -f /var/log/apache2/*.log /usr/local/redmine/log/production.log &
+apache2ctl -f /etc/apache2/redmine_apache.conf -D FOREGROUND
